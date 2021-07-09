@@ -11,7 +11,7 @@
                 <div id="getRange" class="col card card-body collapse">
                     <h5 class="card-title">Create the Models for the Input and Results.</h5>
                     <p>To begin, create two models: Triangle, and TriangleResults</p>
-                    <img src="~/img/TriangleCodeModels.png" alt="Code models snippet" />
+                    <img src="~/img/TriangleCodeModels.png" alt="Code models snippet" class="w-100 h-auto"/>
                 </div>
             </div>
             <div class="row">
@@ -22,7 +22,7 @@
                     <h5 class="card-title">Create an interface and an implementation class to handle the heavy lifting</h5>
                     <p>Now, let's create an interface to act as the Triangle Service. We will call this ITriangleService. The members in this interface are methods that perform various tasks within the application, such as validating whether the input is a valid triangle, and calculating the angles. Next, we create an implementation class TriangleService to implement the methods.</p>
                     <img src="~/img/TriangleInterface.png" alt="Triangle Interface snippet" />
-                    <img src="~/img/TriangleService.png" alt="Triangle Service snippet" />
+                    <img src="~/img/TriangleService.png" alt="Triangle Service snippet" class="w-100 h-auto"/>
                 </div>
             </div>
             <div class="row">
@@ -32,7 +32,7 @@
                 <div id="tableTransition" class="col card card-body collapse">
                     <h5 class="card-title">Create the Get and Post actions for the App in the HomeController</h5>
                     <p>Next we use dependency injection to bring our Triangle Service into the Home Controller. After doing this, we build a Get and Post method that both create an instance of Triangle and return this instantiated Triangle to the View. The Post method also takes an instance of TriangleResults and passes it the data calculated by the methods in the Triangle Service</p>
-                    <img src="~/img/HomeController.png" alt="HomeController snippet" />
+                    <img src="~/img/HomeController.png" alt="HomeController snippet" class="w-100 h-auto"/>
                 </div>
             </div>
             <div class="row">
@@ -42,7 +42,7 @@
                 <div id="printNumbers" class="col card card-body collapse">
                     <h5 class="card-title">Use a form to collect the user input and return a table with the results</h5>
                     <p>Now we take in the user input with a form. This App View takes Triangle as a model, with each "asp-for" attribute tied to a property in the model that binds it to that property in the Post method</p>
-                    <img src="~/img/TriangleView.png" alt="Triangle View snippet" />
+                    <img src="~/img/TriangleView.png" alt="Triangle View snippet" class="w-100 h-auto"/>
 
                 </div>
             </div>
