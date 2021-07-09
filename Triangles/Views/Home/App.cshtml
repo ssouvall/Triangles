@@ -27,14 +27,8 @@
             </div>
         </div>
     </div>
-    @if (TempData["Status"] == "Fail")
-    {
-        <script>
-            alert('You must enter a valid triangle! In order to be valid, no two sides added up can be less than the third side, and no sides can equal zero.')
-        </script>
 
-    }
-    @if (Model.Results.ClassBySide is not null)
+    @if (TempData["Status"] == "Success")
     {
         <div class="row mt-5 mb-5">
             <div class="col-12">
@@ -138,6 +132,43 @@
                 </div>
             </div>
         </div>
+    }
+    @if (TempData["Status"] == "Fail")
+    {
+        <div class="row mt-5 mb-5">
+            <div class="col-12">
+                <div class="card rounded shadow">
+                    <div class="card-header">
+                        <h3>Triangle Results</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <table class="table table-borderless">
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="2">
+                                                    Not a Valid Triangle
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+                                                    This is not a valid triangle. In order to be valid, no two sides added up can be less than the third side, and no sides can equal zero.
+                                                </td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
     }
 
 
