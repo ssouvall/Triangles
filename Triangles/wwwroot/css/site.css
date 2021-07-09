@@ -284,6 +284,13 @@ code {
     }
 }
 
+@media(max-width: 768px) {
+    .code-container {
+        padding: 100px 0 50px 0;
+        margin: 100px 0 50px 0;
+    }
+}
+
 .code-container {
     margin-top: 100px;
 }
