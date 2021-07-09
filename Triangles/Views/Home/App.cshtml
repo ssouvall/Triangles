@@ -1,8 +1,8 @@
-﻿@model Triangles.Models.ViewModels.AppViewModel
+﻿@model Triangles.Models.Triangle
 
 <div class="container app-main" pt-5>
     <div class="row">
-        <div class="col-lg-4 col-md-12">
+        <div class="col-lg-4 col-md-12 mb-5">
             <img src="~/img/TriangleDiagram.png" alt="triangle diagram" class="w-100 h-auto" />
         </div>
         <div class="col-lg-8 col-md-12 app-column">
@@ -12,83 +12,101 @@
                 </div>
                 <div class="card-body text-left">
                     <form asp-action="App" asp-controller="Home" method="post">
-                        <label>Side 1</label>
-                        <input class="form-control" type="number" name="name" value="" />
+                        <label asp-for="FirstSide">Side 1</label>
+                        <input asp-for="FirstSide" class="form-control" type="number" />
 
-                        <label>Side 2</label>
-                        <input class="form-control" type="number" name="name" value="" />
+                        <label asp-for="SecondSide">Side 2</label>
+                        <input asp-for="SecondSide" class="form-control" type="number" />
 
-                        <label>Side 3</label>
-                        <input class="form-control" type="number" name="name" value="" />
+                        <label asp-for="ThirdSide">Side 3</label>
+                        <input asp-for="ThirdSide" class="form-control" type="number" />
 
-                        <button class="btn" type="submit">Submit!</button>
+                        <button class="btn mt-3 text-white" type="submit" data-toggle="modal" data-target="#exampleModal">Submit!</button>
                     </form>
                 </div>
             </div>
         </div>
-        @if(Model.TriangleResult is not null)
-            {
-    <div class="card rounded shadow">
-        <table>
-            <tbody>
-                <tr>
-                    <td>
-                        Angle 1
-                    </td>
-                    <td>
-                        :
-                    </td>
-                    <td>
-                        @Model.TriangleResult.FirstAngle
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Angle 2
-                    </td>
-                    <td>
-                        :
-                    </td>
-                    <td>
-                        @Model.TriangleResult.SecondAngle
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Angle 3
-                    </td>
-                    <td>
-                        :
-                    </td>
-                    <td>
-                        @Model.TriangleResult.ThirdAngle
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Triangle type by side
-                    </td>
-                    <td>
-                        :
-                    </td>
-                    <td>
-                        @Model.TriangleResult.ClassBySide
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Triangle type by angle
-                    </td>
-                    <td>
-                        :
-                    </td>
-                    <td>
-                        @Model.TriangleResult.ClassByAngle
-                    </td>
-                </tr>
-            </tbody>
-        </table>
     </div>
-            }
-    </div>
+    @if (Model.Results.FirstAngle != 0)
+    {
+        <div class="row mt-5 mb-5">
+            <div class="col-12">
+                <div class="card rounded shadow">
+                    <div class="card-header">
+                        <h3>Triangle Results</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <table class="table table-borderless">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    Angle 1:
+                                                </td>
+                                                <td>
+                                                    @Model.Results.FirstAngle<span>&#176;</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Angle 2:
+                                                </td>
+                                                <td>
+                                                    @Model.Results.SecondAngle<span>&#176;</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Angle 3:
+                                                </td>
+                                                <td>
+                                                    @Model.Results.ThirdAngle<span>&#176;</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Triangle type by side:
+                                                </td>
+                                                <td>
+                                                    @Model.Results.ClassBySide
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Triangle type by angle:
+                                                </td>
+                                                <td>
+                                                    @Model.Results.ClassByAngle
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-12">
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+
+
 </div>
+
+

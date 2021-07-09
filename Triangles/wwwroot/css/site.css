@@ -249,10 +249,13 @@ code {
     margin-bottom: 15px;
 }
 
-.app-column {
-    padding-left: 15%;
-    padding-right: 15%;
+@media(min-width: 800px){
+    .app-column {
+        padding-left: 15%;
+        padding-right: 15%;
+    }
 }
+
 
 
 .btn-col {

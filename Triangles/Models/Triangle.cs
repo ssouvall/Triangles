@@ -7,11 +7,10 @@ namespace Triangles.Models
 {
     public class Triangle
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
         public double FirstSide { get; set; }
         public double SecondSide { get; set; }
         public double ThirdSide { get; set; }
+        public TriangleResults Results { get; set; } = new ();
 
     }
 }

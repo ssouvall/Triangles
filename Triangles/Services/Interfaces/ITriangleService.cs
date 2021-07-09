@@ -5,13 +5,13 @@ using System.Threading.Tasks;
 
 namespace Triangles.Services.Interfaces
 {
-    interface ITriangleService
+    public interface ITriangleService
     {
         bool IsTriangle(double sideOne, double sideTwo, double sideThree);
         double CalcAngleOne(double sideOne, double sideTwo, double sideThree);
-        public double CalcAngleTwo(double sideOne, double sideTwo, double sideThree);
-        public double CalcAngleThree(double sideOne, double sideTwo, double sideThree);
-        public string findTypeBySide(double sideOne, double sideTwo, double sideThree);
-        public string findTypeByAngle(double sideOne, double sideTwo, double sideThree);
+        double CalcAngleTwo(double sideOne, double sideTwo, double sideThree);
+        double CalcAngleThree(double sideOne, double sideTwo, double sideThree);
+        string findTypeBySide(double sideOne, double sideTwo, double sideThree);
+        string findTypeByAngle(double sideOne, double sideTwo, double sideThree);
     }
 }
