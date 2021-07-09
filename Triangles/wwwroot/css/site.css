@@ -134,6 +134,7 @@ hr {
 }
 
 .nav-link {
+    color: white!important;
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.25rem;
     letter-spacing: 0.5px;
@@ -302,4 +303,9 @@ code {
 
 .navbar {
     background-color: #001F50;
+}
+
+.resultsImg {
+    height: auto;
+    width: 100%;
 }

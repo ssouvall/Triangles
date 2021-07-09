@@ -93,13 +93,33 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="row">
-                                        <div class="col-12">
-
+                                        <div class="col-6">
+                                            @if (Model.Results.ClassBySide == "Scalene")
+                                            {
+                                                <img src="~/img/Scalene.png" alt="scalene" class="resultsImg" />
+                                            }
+                                            else if (Model.Results.ClassBySide == "Isosceles")
+                                            {
+                                                <img src="~/img/Isosceles.png" alt="isosceles" class="resultsImg" />
+                                            }
+                                            else
+                                            {
+                                                <img src="~/img/Equilateral.png" alt="equilateral" class="resultsImg" />
+                                            }
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-12">
-
+                                        <div class="col-6">
+                                            @if (Model.Results.ClassByAngle == "Right")
+                                            {
+                                                <img src="~/img/Right.png" alt="right" class="resultsImg" />
+                                            }
+                                            else if (Model.Results.ClassByAngle == "Obtuse")
+                                            {
+                                                <img src="~/img/Obtuse.png" alt="obtuse" class="resultsImg" />
+                                            }
+                                            else
+                                            {
+                                                <img src="~/img/AcuteTriangle.png" alt="acute" class="resultsImg" />
+                                            }
                                         </div>
                                     </div>
                                 </div>
