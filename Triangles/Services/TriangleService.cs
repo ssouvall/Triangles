@@ -60,15 +60,15 @@ namespace Triangles.Services
 
             if (angleOne < 90 && angleTwo < 90 && angleThree < 90)
             {
-                typeOfTriangle = "acute";
+                typeOfTriangle = "Acute";
             }
             else if (angleOne > 90 || angleTwo > 90 || angleThree > 90)
             {
-                typeOfTriangle = "obtuse";
+                typeOfTriangle = "Obtuse";
             }
             else
             {
-                typeOfTriangle = "right";
+                typeOfTriangle = "Right";
             }
 
             return typeOfTriangle;
@@ -80,23 +80,23 @@ namespace Triangles.Services
 
             if (sideOne != sideTwo && sideTwo != sideThree && sideThree != sideOne)
             {
-                typeOfTriangle = "scalene";
+                typeOfTriangle = "Scalene";
             }
             else if (sideOne == sideTwo && sideTwo != sideThree)
             {
-                typeOfTriangle = "isosceles";
+                typeOfTriangle = "Isosceles";
             }
             else if (sideTwo == sideThree && sideTwo != sideOne)
             {
-                typeOfTriangle = "isosceles";
+                typeOfTriangle = "Isosceles";
             }
             else if (sideOne == sideThree && sideOne != sideTwo)
             {
-                typeOfTriangle = "isosceles";
+                typeOfTriangle = "Isosceles";
             }
             else
             {
-                typeOfTriangle = "equilateral";
+                typeOfTriangle = "Equilateral";
             }
 
             return typeOfTriangle;

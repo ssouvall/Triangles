@@ -28,6 +28,8 @@ namespace Triangles.Controllers
         {
             Triangle triangle = new Triangle();
 
+            TempData["Status"] = "";
+
             return View(triangle);
         }
 
@@ -45,7 +47,14 @@ namespace Triangles.Controllers
 
                 if (isTriangle == false)
                 {
-                    return View();
+                    TempData["Status"] = "Fail";
+                    return View(triangle);
+                }
+
+                if (sideOne == 0 || sideTwo == 0 || sideThree == 0)
+                {
+                    TempData["Status"] = "Fail";
+                    return View(triangle);
                 }
 
                 double angleOne = _triangleService.CalcAngleOne(sideOne, sideTwo, sideThree);
@@ -60,16 +69,16 @@ namespace Triangles.Controllers
                     FirstSide = sideOne,
                     SecondSide = sideTwo,
                     ThirdSide = sideThree,
-                    FirstAngle = angleOne,
-                    SecondAngle = angleTwo,
-                    ThirdAngle = angleThree,
+                    FirstAngle = Math.Truncate(angleOne * 100) / 100,
+                    SecondAngle = Math.Truncate(angleTwo * 100) / 100,
+                    ThirdAngle = Math.Truncate(angleThree * 100) / 100,
                     ClassBySide = typeBySide,
                     ClassByAngle = typeByAngle
                 };
 
                 triangle.Results = results;
-                
 
+                TempData["Status"] = "Success";
                 return View(triangle);
             }
 

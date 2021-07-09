@@ -27,7 +27,14 @@
             </div>
         </div>
     </div>
-    @if (Model.Results.FirstAngle != 0)
+    @if (TempData["Status"] == "Fail")
+    {
+        <script>
+            alert('You must enter a valid triangle! In order to be valid, no two sides added up can be less than the third side.')
+        </script>
+
+    }
+    @if (Model.Results.ClassBySide is not null)
     {
         <div class="row mt-5 mb-5">
             <div class="col-12">
@@ -106,7 +113,11 @@
     }
 
 
-
 </div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    
+}
 
 
