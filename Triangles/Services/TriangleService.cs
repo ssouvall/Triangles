@@ -14,7 +14,7 @@ namespace Triangles.Services
             double addSideOneAndThree = sideOne + sideThree;
             double addSideTwoAndThree = sideTwo + sideThree;
 
-            if (addSideOneAndTwo < sideThree || addSideOneAndThree < sideTwo || addSideTwoAndThree < sideOne)
+            if (addSideOneAndTwo <= sideThree || addSideOneAndThree <= sideTwo || addSideTwoAndThree <= sideOne)
             {
                 return false;
             }
