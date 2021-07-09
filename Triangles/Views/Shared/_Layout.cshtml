@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    <header>
+    <header id="topheader">
         <!-- Fixed navbar -->
         <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-custom">
             <a id="navbar-brand" class="navbar-brand" href="#"><span><img id="logo" src="/img/TriangleLogo.png" alt="triangle logo"></span></a>
@@ -32,7 +32,7 @@
                         <a class="nav-link" asp-action="Code" asp-controller="Home">See The Code</a>
                     </li>
                     <li class="nav-item nav-animate">
-                        <a class="nav-link" href="//github.com/ssouvall/superDog.git">Get The Code</a>
+                        <a class="nav-link" href="//github.com/ssouvall/triangles.git" target="_blank">Get The Code</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
@@ -48,15 +48,26 @@
         </nav>
     </header>
 
-    <div class="container">
+    <div class="container-fluid">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="footer white">
         <div class="container">
-            &copy; 2021 - Triangles - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <div class="row footer-row">
+                <div class="col-12 footer-social-buttons">
+                    <a href="https://github.com/ssouvall"><i class="nav-icons fab fa-github"></i></a>
+                    <a href="https://twitter.com/SouvallStephen"><i class="nav-icons fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/stephen-souvall-bbb77116/"><i class="nav-icons fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="row footer-row">
+                <div class="col-12">
+                    <p>© 2021 <a id="footer-link" href="//stephensouvall.com">Stephen Souvall</a> all right reserved</p>
+                </div>
+            </div>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

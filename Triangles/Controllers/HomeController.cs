@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Triangles.Models;
+using Triangles.Models.ViewModels;
 
 namespace Triangles.Controllers
 {
@@ -25,9 +26,9 @@ namespace Triangles.Controllers
 
         public IActionResult App()
         {
-            Triangle triangle = new Triangle();
+            AppViewModel model = new ();
 
-            return View(triangle);
+            return View(model);
         }
 
         [HttpPost]

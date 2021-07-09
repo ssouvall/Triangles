@@ -1,5 +1,94 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model Triangles.Models.ViewModels.AppViewModel
+
+<div class="container app-main" pt-5>
+    <div class="row">
+        <div class="col-lg-4 col-md-12">
+            <img src="~/img/TriangleDiagram.png" alt="triangle diagram" class="w-100 h-auto" />
+        </div>
+        <div class="col-lg-8 col-md-12 app-column">
+            <div class="card rounded shadow">
+                <div class="card-header">
+                    <h3>Enter Your Triangle Sides</h3>
+                </div>
+                <div class="card-body text-left">
+                    <form asp-action="App" asp-controller="Home" method="post">
+                        <label>Side 1</label>
+                        <input class="form-control" type="number" name="name" value="" />
+
+                        <label>Side 2</label>
+                        <input class="form-control" type="number" name="name" value="" />
+
+                        <label>Side 3</label>
+                        <input class="form-control" type="number" name="name" value="" />
+
+                        <button class="btn" type="submit">Submit!</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        @if(Model.TriangleResult is not null)
+            {
+    <div class="card rounded shadow">
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        Angle 1
+                    </td>
+                    <td>
+                        :
+                    </td>
+                    <td>
+                        @Model.TriangleResult.FirstAngle
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Angle 2
+                    </td>
+                    <td>
+                        :
+                    </td>
+                    <td>
+                        @Model.TriangleResult.SecondAngle
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Angle 3
+                    </td>
+                    <td>
+                        :
+                    </td>
+                    <td>
+                        @Model.TriangleResult.ThirdAngle
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Triangle type by side
+                    </td>
+                    <td>
+                        :
+                    </td>
+                    <td>
+                        @Model.TriangleResult.ClassBySide
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Triangle type by angle
+                    </td>
+                    <td>
+                        :
+                    </td>
+                    <td>
+                        @Model.TriangleResult.ClassByAngle
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+            }
+    </div>
+</div>
